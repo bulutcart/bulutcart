@@ -1,0 +1,13 @@
+<%
+bulut['content'] = `
+    <!-- Advanced Search -->
+    <div class="card">
+        <div class="card-datatable table-responsive">
+            ${bulut.data_table}
+        </div>
+    </div>
+    <!--/ Advanced Search -->
+`;
+bulut['page_footer'] = '<script src="bulutcart/js/product.js"></script>';
+%>
+<%- include('../../layouts/app', bulut) %>

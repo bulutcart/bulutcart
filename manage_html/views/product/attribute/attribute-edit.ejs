@@ -1,0 +1,75 @@
+<%
+bulut['content'] = `<!-- Content -->
+<div class="container-xxl flex-grow-1 container-p-y">
+<div class="app-ecommerce">
+        <div class="card mb-4">
+            <h5 class="card-header">List groups</h5>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Basic List group -->
+
+                    <!--/ Basic List group -->
+                    <!-- List group with Badges & Pills -->
+                    <div class="col-lg-6">
+                        <small class="text-light fw-medium">With Bagdes &amp; Pills</small>
+                        <div class="demo-inline-spacing mt-3">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between  align-items-center">
+                                    <div class="d-flex">
+                                        <input class="form-control" value="Soufflé pastry pie ice" />
+                                    </div>
+
+                                    <span class="float-end">
+                                    <button class="btn btn-icon btn-outline-primary waves-effect"><i class="ti ti-device-floppy"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect"><i class="ti ti-trash"></i></button>
+                                    </span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="d-flex">
+                                        <input class="form-control" value="Soufflé pastry pie ice" />
+                                    </div>
+                                    <span class="float-end">
+                                    <button class="btn btn-icon btn-outline-primary waves-effect"><i class="ti ti-device-floppy"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect"><i class="ti ti-trash"></i></button>
+                                    </span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+
+                                    <div class="d-flex">
+                                        <input class="form-control" value="Soufflé pastry pie ice" />
+                                    </div>
+                                    <span class="float-end">
+                                    <button class="btn btn-icon btn-outline-primary waves-effect"><i class="ti ti-device-floppy"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect"><i class="ti ti-trash"></i></button>
+                                    </span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div class="d-flex">
+                                        <input class="form-control" value="Soufflé pastry pie ice" />
+                                    </div>
+
+                                    <span class="float-end">
+                                    <button class="btn btn-icon btn-outline-primary waves-effect"><i class="ti ti-device-floppy"></i></button>
+                                    <button class="btn btn-icon btn-outline-danger waves-effect"><i class="ti ti-trash"></i></button>
+                                    </span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/ List group with Badges & Pills -->
+                </div>
+            </div>
+            <hr class="m-0">
+
+        </div>
+
+        </div>
+</div>
+<!-- / Content -->`;
+bulut['page_footer'] = `<script>
+    const product_endpoint = '${bulut.product_endpoint}product/brand/${bulut.current_brand_id}';
+</script>
+<script src="bulutcart/js/brand-edit.js"></script>`;
+%>
+<%- include('../../layouts/app', bulut) %>

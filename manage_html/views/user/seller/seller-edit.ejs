@@ -1,0 +1,96 @@
+<%
+bulut['content'] = `<!-- Content -->
+<div class="container-xxl flex-grow-1 container-p-y" v-cloak>
+    <div class="d-flex flex-column flex-sm-row align-items-center mb-4 text-center text-sm-start gap-2">
+        <div class="d-flex flex-column flex-sm-row align-items-center text-center text-sm-start gap-2">
+            <button v-if="user.status" @click="userDisable" type="button" class="btn btn-label-danger delete-customer waves-effect">Pasif Yap</button>
+            <button v-else @click="userEnable" type="button" class="btn btn-label-success delete-customer waves-effect">Aktif Et</button>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Customer-detail Sidebar -->
+        <div class="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
+            <!-- Customer-detail Card -->
+            <div class="card mb-4">
+                ${bulut.tab_profile}
+            </div>
+            <!-- /Customer-detail Card -->
+        </div>
+        <!--/ Customer Sidebar -->
+        <!-- Customer Content -->
+        <div class="col-xl-8 col-lg-7 col-md-7 order-0 order-md-1">
+            <div class="nav nav-pills flex-column flex-md-row mb-3">
+                <ul class="nav nav-pills mb-3" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-pills-top-overview" aria-controls="navs-pills-top-overview" aria-selected="false" tabindex="-1">
+                            <i class="ti ti-user me-1"></i>Özet
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-pills-top-store" aria-controls="navs-pills-top-store" aria-selected="false" tabindex="-1">
+                            <i class="ti ti-bell me-1"></i>Mağaza
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-pills-top-address" aria-controls="navs-pills-top-address" aria-selected="false" tabindex="-1">
+                            <i class="ti ti-file-invoice me-1"></i>Adresler
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-pills-top-security" aria-controls="navs-pills-top-security" aria-selected="true">
+                            <i class="ti ti-lock me-1"></i>Güvenlik
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-pills-top-document" aria-controls="navs-pills-top-document" aria-selected="false" tabindex="-1">
+                            <i class="ti ti-bell me-1"></i>Belgeler
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content p-0 w-100" style="background-color: transparent; box-shadow:none">
+                    <div class="tab-pane fade active show" id="navs-pills-top-overview" role="tabpanel">
+                        ${bulut.tab_overview}
+                    </div>
+                    <div class="tab-pane" id="navs-pills-top-security" role="tabpanel">
+                       ${bulut.tab_security}
+                    </div>
+                    <div class="tab-pane fade" id="navs-pills-top-address" role="tabpanel">
+                       ${bulut.tab_address}
+                    </div>
+                    <div class="tab-pane fade" id="navs-pills-top-store" role="tabpanel">
+                       ${bulut.tab_store}
+                    </div>
+                    <div class="tab-pane fade" id="navs-pills-top-document" role="tabpanel">
+                        ${bulut.tab_document}
+                    </div>
+                </div>
+            </div>
+            <!-- Plan Card -->
+            <div class="card mb-4 bg-gradient-primary">
+                <div class="card-body">
+                    <div class="row justify-content-between mb-3">
+                        <div class="col-md-12 col-lg-7 col-xl-12 col-xxl-7 text-center text-lg-start text-xl-center text-xxl-start order-1 order-lg-0 order-xl-1 order-xxl-0">
+                            <h4 class="card-title text-white text-nowrap">Upgrade to premium</h4>
+                            <p class="card-text text-white">
+                                Upgrade customer to premium membership to access pro features.
+                            </p>
+                        </div>
+                        <span class="col-md-12 col-lg-5 col-xl-12 col-xxl-5 text-center mx-auto mx-md-0 mb-2"><img src="../../assets/img/illustrations/rocket.png" class="w-px-75 m-2" alt="3dRocket"></span>
+                    </div>
+                    <button class="btn btn-white text-primary w-100 fw-medium shadow-md waves-effect waves-light" data-bs-target="#upgradePlanModal" data-bs-toggle="modal">
+                        Upgrade to premium
+                    </button>
+                </div>
+            </div>
+            <!-- /Plan Card -->
+        </div>
+        <!--/ Customer Content -->
+    </div>
+</div>
+<!-- / Content -->`;
+bulut['page_footer'] = `<script>
+    const user_endpoint = '${bulut.user_endpoint}seller/profile/${bulut.current_user_id}';
+</script>
+<script src="bulutcart/js/user-edit.js"></script>`;
+%>
+<%- include('../../layouts/app', bulut) %>

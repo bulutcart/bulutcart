@@ -1,0 +1,40 @@
+<div class="card card-action mb-4">
+    <div class="card-header align-items-center py-4">
+        <h5 class="card-action-title mb-0">Adres Listesi</h5>
+        <div class="card-action-element">
+            <button @click="addNewAddress" class="btn btn-label-primary waves-effect" type="button" data-bs-toggle="modal" data-bs-target="#addNewAddress">
+                Yeni Adres
+            </button>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="accordion accordion-flush accordion-arrow-left">
+            <div v-for="(address, index) in user.addresses" :key="index" class="accordion-item border-bottom">
+                <div class="accordion-header d-flex justify-content-between align-items-center flex-wrap flex-sm-nowrap">
+                    <a class="accordion-button collapsed" data-bs-toggle="collapse" :data-bs-target="'#address' + index"
+                       aria-expanded="false" :aria-controls="'address' + index" role="button">
+                        <span>
+                            <span class="d-flex gap-2 align-items-baseline">
+                                <span class="h6 mb-1">@{{ address.name }}</span>
+                                <span v-if="address.is_default" class="badge bg-label-success">Default Address</span>
+                            </span>
+                            <span class="mb-0 text-muted">@{{ address.district }}, @{{ address.city }}</span>
+                        </span>
+                    </a>
+                    <div class="d-flex gap-3 p-4 p-sm-0 pt-0 ms-1 ms-sm-0">
+                        <a href="javascript:void(0);"><i class="ti ti-trash text-secondary ti-sm"></i></a>
+                    </div>
+                </div>
+                <div :id="'address' + index" class="accordion-collapse collapse">
+                    <div class="accordion-body ps-4 ms-2">
+                        <h6 class="mb-1">@{{ address.name }}</h6>
+                        <p class="mb-1">@{{ address.district }}, @{{ address.city }}</p>
+                        <p class="mb-1">@{{ address.country }}</p>
+                        <p class="mb-1">Posta Kodu: @{{ address.post_code }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

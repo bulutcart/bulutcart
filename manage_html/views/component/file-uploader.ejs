@@ -1,0 +1,14 @@
+<div class="align-items-sm-center gap-4 text-center">
+    <img v-if="user.imageUrl"  alt="user-avatar" class="w-px-100 h-px-100 rounded" id="uploadedasd123" resetImage="assets/img/front-pages/icons/user.png"  :src="user.imageUrl">
+    <img v-else="user.imageUrl"  alt="user-avatar" class="w-px-100 h-px-100 rounded" id="uploadedasd123" resetImage="assets/img/front-pages/icons/user.png"  src="/assets/img/front-pages/icons/user.png">
+    <div class="button-wrapper">
+        <label for="upload" class="me-2 mb-3" tabindex="0">
+            <i class="ti ti-upload d-block"></i>
+            <input type="file" id="upload" class="account-file-input" accept="image/png, image/jpeg">
+            <input v-model="user.image" type="hidden" id="data-asd123">
+        </label>
+        <label type="button" class="account-image-reset mb-3">
+            <i class="ti ti-trash d-block"></i>
+        </label>
+    </div>
+</div>

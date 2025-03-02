@@ -1,0 +1,65 @@
+<%
+bulut['content'] = `<!-- Content -->
+<div class="container-xxl flex-grow-1 container-p-y">
+<div class="app-ecommerce">
+            <!-- Add Product -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
+
+                <div class="d-flex align-content-center flex-wrap gap-3">
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-label-success waves-effect">Yayınla</button>
+                        <button class="btn btn-label-danger waves-effect">Durdur</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <!-- Product Information -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="card-tile mb-0">Product information</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label" for="ecommerce-product-name">Name</label>
+                                <input type="text" class="form-control" id="ecommerce-product-name" placeholder="Product title" name="productTitle" aria-label="Product title">
+                            </div>
+                            <!-- Description -->
+                            <div>
+                                <label class="form-label">Description (Optional)</label>
+                                <div class="form-control p-0 pt-1">
+                                    ***
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Product Information -->
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 card-title">Media</h5>
+                            <a href="javascript:void(0);" class="fw-medium">Add media from URL</a>
+                        </div>
+                        <div class="card-body">
+                            <form action="/upload" class="dropzone needsclick dz-clickable" id="dropzone-basic">
+                                <div class="dz-message needsclick">
+                                    <p class="fs-4 note needsclick pt-3 mb-1">Drag and drop your image here</p>
+                                    <p class="text-muted d-block fw-normal mb-2">or</p>
+                                    <span class="note needsclick btn bg-label-primary d-inline" id="btnBrowse">Browse image</span>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<!-- / Content -->`;
+bulut['page_footer'] = `<script>
+    const product_endpoint = '${bulut.product_endpoint}prodyct/brand/${bulut.current_category_id}';
+</script>
+<script src="bulutcart/js/product-edit.js"></script>`;
+%>
+<%- include('../../layouts/app', bulut) %>
