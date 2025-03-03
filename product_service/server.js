@@ -14,7 +14,9 @@ app.get("/", middleWare.isPublic, async (req, res) => {
     // Bağlantı Test Etme
     res.json(Response.success({}, "Product Server is Online!"));
 });
-
+server.on('connection', (socket) => {
+    socket.setTimeout(5000); // 5 saniye sonra bağlantıyı kapat
+});
 
 app.get("/product/list",  middleWare.isPublic, async (req, res) => {
     // ürün Listesi

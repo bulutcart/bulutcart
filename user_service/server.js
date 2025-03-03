@@ -15,6 +15,9 @@ app.get("/", middleWare.isPublic, async (req, res) => {
     // Bağlantı Test Etme
     res.json(Response.success({}, "User Server is Online!"));
 });
+server.on('connection', (socket) => {
+    socket.setTimeout(5000); // 5 saniye sonra bağlantıyı kapat
+});
 
 app.post("/customer/register",  middleWare.isPublic, async (req, res) => {
     // Kullanıcı Listesi
