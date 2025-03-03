@@ -52,6 +52,7 @@ class ProductController {
                 filterValues = [...filterValues, `${id}%`];
             }
             if(name){
+                name = name.replaceAll(' ', ' %');
                 filter += " AND name LIKE ?";
                 filterValues = [...filterValues, `%${name}%`];
             }
