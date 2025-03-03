@@ -7,6 +7,8 @@ const MiddleWare = require('../util/MiddleWare');
 const jwt = require("jsonwebtoken");
 
 const app = express();
+const server = http.createServer(app);
+
 const middleWare = new MiddleWare(jwt);
 
 app.use(express.json());

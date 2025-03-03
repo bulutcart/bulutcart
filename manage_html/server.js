@@ -19,8 +19,8 @@ const cookieParser = require("cookie-parser");
 const express = require('express');
 
 const app = express();
+const server = http.createServer(app);
 
-// EJS ayarları
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'static')));
