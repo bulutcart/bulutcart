@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 // Ana sayfa route'u
 app.get('/', (req, res) => {
     const UserController =  require("./controller/UserController");
-    return UserController.home(req, res);
+    return UserController.home(req, res); 
 });
 
 app.get('/login', (req, res) => {
